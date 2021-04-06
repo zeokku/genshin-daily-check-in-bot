@@ -1,0 +1,14 @@
+{
+  "name": "genshin-daily-check-in-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "repository": "git@github.com:zeokku/genshin-daily-check-in-bot.git",
+  "author": "Lutymane <luty@zeokku.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "chalk": "^4.1.0",
+    "querystring": "^0.2.1"
+  }
+}
