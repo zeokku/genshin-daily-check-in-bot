@@ -9,7 +9,7 @@ https://webstatic-sea.mihoyo.com/ys/event/signin-sea/index.html?act_id=e20210225
 ## Setting up
 
 - `git clone https://github.com/zeokku/genshin-daily-check-in-bot.git`
-- `cd` into the folder
+- `cd genshin-daily-check-in-bot`
 - `npm i` or `yarn`
 - Open [web event](https://webstatic-sea.mihoyo.com/ys/event/signin-sea/index.html?act_id=e202102251931481) in a browser
 - Obtain _login_ticket_ cookie:
