@@ -98,8 +98,15 @@ async function main() {
     },
   });
 
+  let nextTry = null;
+
   if (data.retcode === 0) {
     ({ data } = data);
+
+    nextTry = new Date(data.today);
+
+    //local UTC offset is already assumed (getHours), so we just sub 8 to get UTC+8 00:00 in local time
+    nextTry.setHours(nextTry.getHours() - 8, nextTry.getMinutes() + 5);
 
     if (data.is_sign) {
       warn("The reward for today has already been claimed");
@@ -112,21 +119,7 @@ async function main() {
   }
 
   function waitForTheNext() {
-    let nextTry = new Date();
-
-    //get UTC+8 date/time
-    nextTry.setMinutes(
-      nextTry.getMinutes() + nextTry.getTimezoneOffset() + 8 * 60
-    );
-
-    //next day
-    nextTry.setDate(nextTry.getDate() + 1);
-
-    //now convert UTC+8 of the next day at 00:00 to local time
-    nextTry.setHours(0, -nextTry.getTimezoneOffset() - 8 * 60, 0, 0);
-
-    //add some margin of 5 minutes
-    nextTry.setMinutes(nextTry.getMinutes() + 5);
+    nextTry.setDate(nextTry.getDate() + 1); //next day
 
     accent(`Next try in ${nextTry}`);
     setTimeout(signDay, nextTry.getTime() - Date.now());
