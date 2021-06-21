@@ -26,5 +26,5 @@ https://webstatic-sea.mihoyo.com/ys/event/signin-sea/index.html?act_id=e20210225
 
   - Copy the returned string into _cookies.json_ file in place of _login_token_here_ string
 
-- Run `node ./`
-- Create a shortcut and place it to autorun, so the program will run each time you run the machine
+- Run `node ./` or `./run`
+- Create a shortcut for `run.bat` and place it to autorun (Win+R -> shell:startup), so the program will run each time you run the machine
